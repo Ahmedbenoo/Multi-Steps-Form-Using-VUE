@@ -1,0 +1,72 @@
+@use "../utils/" as u;
+
+.submit-footer{
+    background-color: u.$color-bg-2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    padding: 15px 5%;
+
+    @include u.desktop-only{
+        position: initial;
+        width: 100%;
+        background-color: transparent;
+        right: calc(5% - 5px);
+        bottom: 10px;
+    }
+
+    .go-back-button{
+        background-color: transparent;
+        border: none;
+        font-weight: 600;
+        color: u.$color-secondary;
+
+        @include u.desktop-only{
+            cursor: pointer;
+
+            &:hover{
+                color: u.$color-primary;
+            }
+        }
+    }
+
+    .next-step{
+        background-color: u.$color-primary;
+        color: u.$color-btn-light;
+        padding-right: 15px;
+        padding-left: 15px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+
+        @include u.desktop-only{
+            padding-left: 20px;
+            padding-right: 20px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: lighten(u.$color-primary, 20%);
+            }
+        }
+    }
+
+    .confirm{
+        background-color: u.$color-active;
+        color: u.$color-btn-light;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 5px;
+        border: none;
+
+        @include u.desktop-only{
+            cursor: pointer;
+
+            &:hover{
+                background-color: lighten(u.$color-active, 15%);
+            }
+        }
+    }
+}
